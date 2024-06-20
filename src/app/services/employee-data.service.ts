@@ -16,16 +16,16 @@ export class EmployeeDataService {
   private employeesList: Employee[] = [];
 
   saveEmployeesToLocalStorage(): void {
-    // localStorage.removeItem('storedEmployeeList');
-    // localStorage.setItem('storedEmployeeList', JSON.stringify(this.employeesList));
+    localStorage.removeItem('storedEmployeeList');
+    localStorage.setItem('storedEmployeeList', JSON.stringify(this.employeesList));
 
-    localStorage.removeItem('CheckerList');
-    localStorage.setItem('CheckerList', JSON.stringify(this.employeesList));
+    // localStorage.removeItem('CheckerList');
+    // localStorage.setItem('CheckerList', JSON.stringify(this.employeesList));
   }
 
   loadEmployeesFromLocalStorage(): Employee[] | undefined {
-    //const storedEmployees = localStorage.getItem('storedEmployeeList');
-    const storedEmployees = localStorage.getItem('CheckerList');
+    const storedEmployees = localStorage.getItem('storedEmployeeList');
+    //const storedEmployees = localStorage.getItem('CheckerList');
     if (storedEmployees) {
       this.employeesList = JSON.parse(storedEmployees);
       return this.employeesList;
@@ -57,15 +57,15 @@ export class EmployeeDataService {
     return true;
   }
 
-  updateEmployee(updatedEmployee: EmployeeTuple): boolean {
+  updateEmployee(updatedEmployeeTuple: EmployeeTuple): boolean {
     const [empID, name, email, department, address, authority] =
-      updatedEmployee;
+    updatedEmployeeTuple;
     const index = this.employeesList.findIndex((emp) => emp.empID === empID);
     if (index === -1) {
         alert("Employee ID does not exists to Update the Data")
         return false;
     }
-    const updatedEmp: Employee = {
+    var updatedEmployee: Employee = {
       empID,
       name,
       email,
@@ -74,10 +74,11 @@ export class EmployeeDataService {
       authority,
     };
 
-    this.employeesList[index] = updatedEmp;
-
+    this.employeesList[index] = updatedEmployee;
+    console.log(this.employeesList);
     this.saveEmployeesToLocalStorage();
     this.loadEmployeesFromLocalStorage();
+
     return true;
   }
 }

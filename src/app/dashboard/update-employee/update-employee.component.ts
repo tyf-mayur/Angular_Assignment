@@ -22,18 +22,21 @@ export class UpdateEmployeeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    if(!localStorage.getItem('StoredLoginData')){
+      this.router.navigateByUrl("/login");
+    }
     this.empID = JSON.parse(this.route.snapshot.paramMap.get('id') as string);
   }
 
   Update() {
     const name = (document.getElementById('name') as HTMLInputElement).value;
-    const email = (document.getElementById('name') as HTMLInputElement).value;
+    const email = (document.getElementById('empEmail') as HTMLInputElement).value;
     const department = (
       document.getElementById('department') as HTMLSelectElement
     ).value as Department;
     const address = (document.getElementById('address') as HTMLInputElement)
       .value;
-    const authority = (document.getElementById('address') as HTMLInputElement)
+    const authority = (document.getElementById('Authority') as HTMLInputElement)
       .value as Authority;
 
     let employeeTuple: EmployeeTuple = [
@@ -44,6 +47,7 @@ export class UpdateEmployeeComponent implements OnInit {
       address,
       authority,
     ];
+    console.log(employeeTuple);
     if (this.employeeDataService.updateEmployee(employeeTuple)) {
       alert('Employee Updated Suceessfully....');
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeDataService } from 'src/app/services/employee-data.service';
 import { Employee, EmployeeTuple , Department} from 'src/app/app-customs.models';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -9,16 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
+
   constructor(
     private employeeDataService: EmployeeDataService,
-    private router: Router
+    private router: Router,
   ) {}
   StoredEmployeeList: Employee[] = [];
   ngOnInit(): void {
-    this.StoredEmployeeList =
+    if(!localStorage.getItem('StoredLoginData')){
+      this.router.navigateByUrl("/login");
+    }else{
+      this.StoredEmployeeList =
       this.employeeDataService.loadEmployeesFromLocalStorage() || [];
+    }
+    
   }
-
+  
   viewEmployeeDetails(empID: Number): void {
     alert(`Viewing details for employee ID: ${empID}`);
     let employee = this.StoredEmployeeList.find(emp => emp.empID === empID);

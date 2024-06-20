@@ -5,20 +5,21 @@ import { AddEmployeeComponent } from './dashboard/add-employee/add-employee.comp
 import { ViewEmployeeComponent } from './dashboard/view-employee/view-employee.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UpdateEmployeeComponent } from './dashboard/update-employee/update-employee.component';
+import { AppComponent } from './app.component';
+import { UserComponent } from './dashboard/user/user.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
+    component: AppComponent,
   },
   {
     path: 'login',
-    component:LoginComponent
+    component: LoginComponent
   },
   {
     path: 'user',
-    component:AddEmployeeComponent
+    component: UserComponent
   },
   {
     path: 'view-employee/:id',
@@ -26,11 +27,11 @@ const routes: Routes = [
   },
   {
     path: 'add-employee',
-    component:AddEmployeeComponent
+    component: AddEmployeeComponent
   },
   {
     path: 'update-employee/:id',
-    component:UpdateEmployeeComponent
+    component: UpdateEmployeeComponent
   },
   {
     path: '**',
