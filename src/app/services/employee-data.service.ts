@@ -1,4 +1,4 @@
-/* eslint-disable @angular-eslint/contextual-lifecycle */
+
 import { Injectable } from '@angular/core';
 import {
   Department,
@@ -16,16 +16,16 @@ export class EmployeeDataService {
   private employeesList: Employee[] = [];
 
   saveEmployeesToLocalStorage(): void {
-    localStorage.removeItem('storedEmployeeList');
-    localStorage.setItem('storedEmployeeList', JSON.stringify(this.employeesList));
+    // localStorage.removeItem('storedEmployeeList');
+    // localStorage.setItem('storedEmployeeList', JSON.stringify(this.employeesList));
 
-    // localStorage.removeItem('CheckerList');
-    // localStorage.setItem('CheckerList', JSON.stringify(this.employeesList));
+    //localStorage.removeItem('CheckerList');
+    localStorage.setItem('CheckerList', JSON.stringify(this.employeesList));
   }
 
   loadEmployeesFromLocalStorage(): Employee[] | undefined {
-    const storedEmployees = localStorage.getItem('storedEmployeeList');
-    //const storedEmployees = localStorage.getItem('CheckerList');
+    //const storedEmployees = localStorage.getItem('storedEmployeeList');
+    const storedEmployees = localStorage.getItem('CheckerList');
     if (storedEmployees) {
       this.employeesList = JSON.parse(storedEmployees);
       return this.employeesList;
@@ -81,6 +81,7 @@ export class EmployeeDataService {
 
     return true;
   }
+
 }
 
 var CheckerEmployeeList: Employee[] = [];

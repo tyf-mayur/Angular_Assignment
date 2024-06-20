@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
 
   username: string = '';
@@ -19,13 +19,11 @@ export class LoginComponent {
 
   constructor(private router : Router) { }
 
-  // ngOnInit(): void {
-  //   // if(localStorage.getItem('StoredLoginData')){
-  //   //   this.check = true;
-  //   // }else{
-  //   //   this.route.navigateByUrl("/user");
-  //   // }
-  // }
+  ngOnInit(): void {
+    if(!localStorage.getItem('StoredLoginData')){
+      this.router.navigateByUrl("/login");
+    }
+  }
 
   openModal(): void {
     this.showModal = true;

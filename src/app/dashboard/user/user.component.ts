@@ -9,7 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-
   constructor(
     private employeeDataService: EmployeeDataService,
     private router: Router,
@@ -18,11 +17,14 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     if(!localStorage.getItem('StoredLoginData')){
       this.router.navigateByUrl("/login");
-    }else{
-      this.StoredEmployeeList =
-      this.employeeDataService.loadEmployeesFromLocalStorage() || [];
     }
+    this.Refresh();
     
+  }
+
+  Refresh():void{
+    this.StoredEmployeeList =
+    this.employeeDataService.loadEmployeesFromLocalStorage() || [];
   }
   
   viewEmployeeDetails(empID: Number): void {
@@ -37,4 +39,5 @@ export class UserComponent implements OnInit {
     alert('Routing to Add Employee Form');
     this.router.navigateByUrl('/add-employee');
   }
+
 }

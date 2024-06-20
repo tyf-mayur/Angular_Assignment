@@ -3,10 +3,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './user-auth/login/login.component';
 import { AddEmployeeComponent } from './dashboard/add-employee/add-employee.component';
 import { ViewEmployeeComponent } from './dashboard/view-employee/view-employee.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UpdateEmployeeComponent } from './dashboard/update-employee/update-employee.component';
 import { AppComponent } from './app.component';
 import { UserComponent } from './dashboard/user/user.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   {
@@ -34,8 +34,8 @@ const routes: Routes = [
     component: UpdateEmployeeComponent
   },
   {
-    path: '**',
-    component: PageNotFoundComponent
+    path:'**',
+    component: PagenotfoundComponent
   }
 ];
 

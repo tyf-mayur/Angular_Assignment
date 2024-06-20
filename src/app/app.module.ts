@@ -8,12 +8,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserAuthModule } from './user-auth/user-auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent, PagenotfoundComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, UserAuthModule, DashboardModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
-  bootstrap: [AppComponent, PageNotFoundComponent],
+  bootstrap: [AppComponent, PagenotfoundComponent],
 })
 export class AppModule {}

@@ -15,6 +15,8 @@ export class AddEmployeeComponent implements OnInit{
   ngOnInit(): void {
     if(!localStorage.getItem('StoredLoginData')){
       this.router.navigateByUrl("/login");
+    }else{
+      this.router.navigateByUrl("/add-employee");
     }
   }
   Submit():void{
