@@ -1,0 +1,26 @@
+
+<div *ngIf="check">
+  <h2>Employee Login Form</h2>
+
+  <button (click)="openModal()" style="width:auto;">Login</button>
+
+  <div id="id01" class="modal" [ngClass]="{'show': showModal}">
+    <form class="modal-content animate" (ngSubmit)="login()">
+      <div class="imgcontainer">
+        <span (click)="closeModal()" class="close" title="Close Modal">&times;</span>
+        <img src="assets/icon/LoginLogo.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]="username" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="password" required>
+
+        <button type="submit">Login</button>
+      </div>
+
+    </form>
+  </div>
+</div>

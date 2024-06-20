@@ -1,0 +1,21 @@
+
+<app-logout></app-logout>
+<div class="employee-card-wrapper">
+  <div class="employee-card">
+    <h2>Employee Details</h2>
+    <div class="employee-info">
+      <p><strong>Employee ID:</strong> <span> {{ employeeDetails.empID }}</span></p>
+      <p><strong>Name:</strong> <span> {{ employeeDetails.name }}</span></p>
+      <p><strong>Email:</strong> <span> {{ employeeDetails.email }}</span></p>
+      <p><strong>Department:</strong> <span> {{ employeeDetails.department }}</span>
+      </p>
+      <p><strong>Address:</strong> <span> {{ employeeDetails.address }}</span></p>
+      <p><strong>Authority:</strong> <span> {{ employeeDetails.authority }}</span>
+      </p>
+    </div>
+    <button #update (click)="RouteToUpdate()">Update Details</button>
+    <button #back (click)="RouteToDashboard()">Back</button>
+  </div>
+</div>
+
+<app-logout></app-logout>

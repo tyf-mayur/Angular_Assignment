@@ -1,0 +1,105 @@
+/* General styles for the entire form */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #3db2ba;
+}
+
+#container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: auto; /* Enable scrolling if content overflows */
+    max-height: 80vh; /* Set a maximum height for the container */
+}
+
+#Add_Employee h2 {
+    text-align: center;
+    color: #555;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Style for select elements to enable scrolling */
+select {
+    max-height: 150px; /* Maximum height for select dropdown */
+    overflow: auto; /* Enable scrolling for select dropdown */
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#addEmployeeButton {
+    background-color: #28a745;
+}
+
+#addEmployeeButton:hover {
+    background-color: #218838;
+}
+
+#updateEmployeeButton {
+    background-color: #ffc107;
+}
+
+#updateEmployeeButton:hover {
+    background-color: #e0a800;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    #container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    #container {
+        width: 95%;
+    }
+}

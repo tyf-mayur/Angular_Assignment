@@ -1,0 +1,35 @@
+<app-logout></app-logout>
+<h1>Employee Management System</h1>
+    <div id="container">
+        <div id="Add_Employee">
+            <h2>Fill Employee Details</h2>
+            <form id="addEmployeeForm">
+                <label for="empID">Employee ID : </label>
+                <input type="number" id="empID" required><br>
+
+                <label for="name">Employee Name : </label>
+                <input type="text" id="name" required><br>
+
+                <label for="empEmail">Employee Email : </label>
+                <input type="string" id="empEmail" required><br>
+
+                <label for="department">Department : </label>
+                <select id="department">
+                    <option value="Development">Development</option>
+                    <option value="QA">QA</option>
+                    <option value="HR">HR</option>
+                    <option value="Manager">Manager</option>
+                </select><br>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" required><br>
+
+                <label for="Authority">Authority : </label>
+                <select id="Authority">
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                </select><br>
+
+                <button type="button" id="addEmployeeButton" (click)="Submit()">Add New Employee</button>
+            </form>
+        </div>

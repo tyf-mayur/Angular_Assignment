@@ -1,0 +1,58 @@
+.employee-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #212020; /* Optional: Light background for contrast */
+  }
+  
+  .employee-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    background-color: rgb(37, 35, 35); /* Background color for the card */
+  }
+  
+  .employee-card h2 {
+    margin-top: 0;
+    color: #4CAF50;
+  }
+  
+  .employee-info p {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  
+  .employee-info p strong {
+    color: #c4bfbf;
+  }
+
+  .employee-info p span {
+    color: rgb(107, 159, 211);
+  }
+  
+  .employee-info p {
+    padding: 5px;
+    border-bottom: 1px solid #322882;
+  }
+  
+  .employee-info p:last-child {
+    border-bottom: none;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
