@@ -19,18 +19,17 @@ export class EmployeeDataService {
     // localStorage.removeItem('storedEmployeeList');
     // localStorage.setItem('storedEmployeeList', JSON.stringify(this.employeesList));
 
-    //localStorage.removeItem('CheckerList');
     localStorage.setItem('CheckerList', JSON.stringify(this.employeesList));
   }
 
-  loadEmployeesFromLocalStorage(): Employee[] | undefined {
+  loadEmployeesFromLocalStorage(): Employee[]  {
     //const storedEmployees = localStorage.getItem('storedEmployeeList');
     const storedEmployees = localStorage.getItem('CheckerList');
     if (storedEmployees) {
       this.employeesList = JSON.parse(storedEmployees);
       return this.employeesList;
     }
-    return undefined;
+    return [];
   }
 
   addEmployee(emp: EmployeeTuple): boolean {
@@ -106,4 +105,4 @@ const newEmployee: Employee = {
 };
 CheckerEmployeeList.push(newEmployee);
 localStorage.setItem('EmployeeByID', JSON.stringify(newEmployee));
-localStorage.setItem('CheckerList', JSON.stringify(CheckerEmployeeList));
+

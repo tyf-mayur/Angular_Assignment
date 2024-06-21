@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
 
   Refresh():void{
     this.StoredEmployeeList =
-    this.employeeDataService.loadEmployeesFromLocalStorage() || [];
+    this.employeeDataService.loadEmployeesFromLocalStorage();
   }
   
   viewEmployeeDetails(empID: Number): void {

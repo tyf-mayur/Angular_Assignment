@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit{
         localStorage.setItem('StoredLoginData', JSON.stringify(userCredentials));
         alert('Login successful');
         this.closeModal();
-        this.router.navigateByUrl("/user")
+        this.router.navigateByUrl("/user");
       }else{
         alert('Invalid credentials');
         this.closeModal();

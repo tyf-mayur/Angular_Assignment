@@ -14,7 +14,6 @@ export class ViewEmployeeComponent  implements OnInit {
   employeeDetails!:Employee ;
   constructor(private employeeDataService:EmployeeDataService, private router:Router, private route:ActivatedRoute) { }
 
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
     if(!localStorage.getItem('StoredLoginData')){
       this.router.navigateByUrl("/login");
